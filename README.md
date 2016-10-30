@@ -31,17 +31,25 @@ The steps to install this application:
 3. edit the /etc/apache2/extra/httpd-vhosts.conf to add new setting, such as
 
 <VirtualHost *:80>
+
     DocumentRoot "/Users/eunice/Sites/project"
+    
     ServerName www.wpstest.com
+    
     ErrorLog "/private/var/log/apache2/sites-error_log"
+    
     CustomLog "/private/var/log/apache2/sites-access_log" common
+    
     <Directory "/Users/eunice/Sites/project">
+    
         Options Indexes FollowSymLinks MultiViews
+        
         AllowOverride All
+        
         Require all granted
-        #Order allow,deny
-        #Allow from all
+
     </Directory>
+    
 </VirtualHost>
 
 4. restart Apache 
